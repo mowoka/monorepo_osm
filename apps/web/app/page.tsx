@@ -1,14 +1,17 @@
 'use client'
 
-import { Button } from '@repo/ui/src/button'
-
+import dynamic from 'next/dynamic'
+import '../styles/global.css'
 import styles from '../styles/index.module.css'
 
 export default function Web() {
+    const Map = dynamic(() => import('../components/common/map'), {
+        ssr: false,
+    })
+
     return (
         <div className={styles.container}>
-            <h1>Web</h1>
-            <Button onClick={() => console.log('Pressed!')} text="Boop" />
+            <Map />
         </div>
     )
 }
