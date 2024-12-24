@@ -22,6 +22,7 @@ export default function Map() {
     const [client, setClient] = useState<boolean>(false)
     const [position, setPosition] = useState<Position>(DEFAULT_POSITION)
     const markerRef = useRef<L.Marker>(null)
+    const mapRef = useRef<L.Map>(null)
     const [openModal, setOpenModal] = useState<boolean>(false)
 
     const eventHandlers = useMemo(
@@ -36,6 +37,12 @@ export default function Map() {
         []
     )
 
+    const handleSelectLocation = (location: Position) => {
+        setPosition(location)
+        mapRef.current?.flyTo(location, 15)
+        setOpenModal(false)
+    }
+
     useEffect(() => {
         setClient(true)
     }, [])
@@ -46,18 +53,21 @@ export default function Map() {
 
     return (
         <MapContainer
-            center={[position.lat, position.lng]}
+            ref={mapRef}
+            center={position}
             style={{ width: '100%', height: '100vh', position: 'relative' }}
             zoom={14}
             scrollWheelZoom={false}
             touchZoom={false}
+            fadeAnimation={true}
+            markerZoomAnimation={true}
         >
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <Marker
-                position={[position.lat, position.lng]}
+                position={position}
                 eventHandlers={eventHandlers}
                 ref={markerRef}
                 draggable={true}
@@ -69,7 +79,9 @@ export default function Map() {
             <div onClick={() => setOpenModal(true)} className={styles.button}>
                 <p className={styles.textButton}>S</p>
             </div>
-            {openModal && <SearchLocation />}
+            {openModal && (
+                <SearchLocation handleSelectLocation={handleSelectLocation} />
+            )}
         </MapContainer>
     )
 }
