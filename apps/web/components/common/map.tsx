@@ -13,14 +13,13 @@ export interface Position {
     lng: number
 }
 
-const DEFAULT_POSITION: Position = {
-    lat: -6.8862571,
-    lng: 107.520522,
+interface MapProps {
+    mapPosition: Position
 }
 
-export default function Map() {
+export default function Map({ mapPosition }: MapProps) {
     const [client, setClient] = useState<boolean>(false)
-    const [position, setPosition] = useState<Position>(DEFAULT_POSITION)
+    const [position, setPosition] = useState<Position>(mapPosition)
     const markerRef = useRef<L.Marker>(null)
     const mapRef = useRef<L.Map>(null)
     const [openModal, setOpenModal] = useState<boolean>(false)
