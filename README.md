@@ -63,7 +63,7 @@ yarn expo start
 1. Map multiple markers
 2. Map clustering
 
-### Result & Review
+### Result & Preview
 
 Web
 
