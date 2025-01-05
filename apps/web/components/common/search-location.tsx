@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useSearchLocationHook } from '../../hooks/search-location'
 import { Position } from './map'
+import { View } from '@repo/ui/design/view'
 
 export function SearchLocation({
     handleSelectLocation,
@@ -11,7 +12,7 @@ export function SearchLocation({
     const { isLoading, locations, handleSearchLocation } =
         useSearchLocationHook()
     return (
-        <div className="absolute top-0 left-0 right-0 bottom-0 z-[100000] bg-black/50 flex justify-center items-center">
+        <View className="absolute top-0 left-0 right-0 bottom-0 z-[100000] bg-black/50 flex justify-center items-center">
             <div className="w-full max-w-[400px] bg-white rounded-lg p-5 flex flex-col">
                 <div className="w-full flex flex-row justify-between">
                     <input
@@ -54,6 +55,6 @@ export function SearchLocation({
                     })}
                 </div>
             </div>
-        </div>
+        </View>
     )
 }

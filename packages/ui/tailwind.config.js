@@ -1,1 +1,11 @@
-module.exports = require("@repo/tailwind/tailwind.config");
+// This is a dummy tailwind config file used to provide intellisense.
+// To configure your global tailwind settings, modify the imported theme object.
+const { theme } = require('ui/design/tailwind/theme')
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    ...theme,
+  },
+}

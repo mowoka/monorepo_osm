@@ -39,5 +39,7 @@
     "node": ">=18"
   },
   "name": "with-react-native-web",
-  "dependencies": {}
+  "dependencies": {
+    "uuid": "^3.4.0"
+  }
 }
