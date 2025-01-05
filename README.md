@@ -67,11 +67,11 @@ yarn expo start
 
 Web
 
-<img width="302" alt="Screenshot 2024-10-29 at 13 29 31" src="https://github.com/user-attachments/assets/4b681106-bf66-4a17-8f12-0d4d8bc6227a" />
+<img width="1680" alt="Screenshot 2025-01-05 at 23 18 12" src="https://github.com/user-attachments/assets/e8001d44-de2a-4f39-8cac-0feda5ae6380" />
 
 Mobile
 
-![Screenshot_1730182450](https://github.com/user-attachments/assets/ab456b6d-9d04-4bef-b7ea-f9cf87feef3d)
+<img width="410" alt="Screenshot 2025-01-05 at 23 18 34" src="https://github.com/user-attachments/assets/c7b88fe5-7659-46fb-849c-980813b3c545" />
 
 
 ### Support Doc Utilities
