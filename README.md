@@ -1,29 +1,69 @@
-# Turborepo react-native starter
+# Monorepo Open Street Map (Next JS + Expo React Native)
 
-This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest -e with-react-native-web
-```
+This is a example project to implement OPEN STREET MAP with monorepo architecture using [Turborepo](https://turborepo.org/) and implement with
+web next js and react native expo.
 
 ## What's inside?
 
-This Turborepo includes the following packages/apps:
+Features:
 
-### Apps and Packages
+Web:
 
-- `native`: a [react-native](https://reactnative.dev/) app built with [expo](https://docs.expo.dev/)
-- `web`: a [Next.js](https://nextjs.org/) app built with [react-native-web](https://necolas.github.io/react-native-web/)
-- `@repo/ui`: a stub [react-native](https://reactnative.dev/) component library shared by both `web` and `native` applications
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+1. React leaftlet map 
+2. Search geolocation
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+Mobile:
 
-### Utilities
+1. Webview map leaflet
+
+## Setup Project
+
+Run the following command:
+
+1. clone this repository
+
+```sh
+git clone https://github.com/mowoka/monorepo_osm.git
+```
+
+2. on root project run this command
+
+```sh
+yarn install
+```
+
+3. on inside apps/native run this command
+
+```sh
+yarn install
+```
+
+4. on inside apps/web run this command
+
+```sh
+yarn install
+```
+
+5. you can run the project by run this command
+
+- web
+
+```sh
+yarn run dev
+```
+
+- mobile
+
+```sh
+yarn expo start
+```
+
+### Next Features
+
+1. Map multiple markers
+2. Map clustering
+
+### Support Doc Utilities
 
 This Turborepo has some additional tools already setup for you:
 
