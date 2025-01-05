@@ -63,6 +63,17 @@ yarn expo start
 1. Map multiple markers
 2. Map clustering
 
+### Result & Review
+
+Web
+
+<img width="302" alt="Screenshot 2024-10-29 at 13 29 31" src="https://github.com/user-attachments/assets/4b681106-bf66-4a17-8f12-0d4d8bc6227a" />
+
+Mobile
+
+![Screenshot_1730182450](https://github.com/user-attachments/assets/ab456b6d-9d04-4bef-b7ea-f9cf87feef3d)
+
+
 ### Support Doc Utilities
 
 This Turborepo has some additional tools already setup for you:
