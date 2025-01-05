@@ -29,7 +29,10 @@ export default function Map({ mapPosition }: MapProps) {
             dragend() {
                 const marker = markerRef.current
                 if (marker != null) {
-                    setPosition(marker.getLatLng())
+                    const { lat, lng } = marker.getLatLng()
+                    setPosition({ lat, lng })
+                    const data = { lat, lng }
+                    window.postMessage(JSON.stringify(data), '*')
                 }
             },
         }),
@@ -39,6 +42,7 @@ export default function Map({ mapPosition }: MapProps) {
     const handleSelectLocation = (location: Position) => {
         setPosition(location)
         mapRef.current?.flyTo(location, 15)
+        window.postMessage(JSON.stringify(location), '*')
         setOpenModal(false)
     }
 
@@ -60,6 +64,7 @@ export default function Map({ mapPosition }: MapProps) {
             touchZoom={false}
             fadeAnimation={true}
             markerZoomAnimation={true}
+            doubleClickZoom={false}
         >
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

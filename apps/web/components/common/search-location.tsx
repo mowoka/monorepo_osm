@@ -19,7 +19,10 @@ export function SearchLocation({
                         placeholder="Enter location"
                         className="flex-1 h-[47px] border border-gray-200 rounded-md px-5 py-2 outline-none"
                         value={keyword}
-                        onChange={(e) => setKeyword(e.target.value)}
+                        onChange={(e) => {
+                            e.preventDefault()
+                            setKeyword(e.target.value)
+                        }}
                     />
                     <div
                         onClick={() => handleSearchLocation(keyword)}
